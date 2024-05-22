@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Printer</title>
+    <style>
+        .pattern {
+            font-family: monospace;
+            white-space: pre;
+        }
+    </style>
+</head>
+
+<body>
+    <pre class="pattern" id="pattern"></pre>
+
+    <script>
+        function printPattern() {
+            const numRows = 5;
+            const numCols = 5;
+            let pattern = '';
+
+            for (let i = 0; i < numRows; i++) {
+                for (let j = 0; j < numCols; j++) {
+                    if ((i === 0 && (j === 2 || j === 4)) ||
+                        (i === 1 && (j === 1 || j === 3 || j === -1)) ||
+                        (i === 2 && (j === 2 || j === 0)) ||
+                        (i === 3 && (j === 1 || j === 3 || j === -1)) ||
+                        (i === 4 && (j === 2 || j === 4))) {
+                        pattern += '* ';
+                    } else {
+                        pattern += '  ';
+                    }
+                }
+                pattern += '\n';
+            }
+
+            document.getElementById('pattern').textContent = pattern;
+        }
+        printPattern();
+    </script>
+</body>
+
+</html>

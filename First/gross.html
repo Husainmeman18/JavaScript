@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gross salary</title>
+</head>
+<body>
+    <h3>Gross Salary</h3>
+    <input type="number" id="basicsalary" placeholder="Enter basic salary">
+    <button onclick="calgrosssalary()">Calculate</button>
+    <p id="result"></p>
+    <script>
+        function calgrosssalary(){
+            let basicsalary = document.getElementById("basicsalary").value;
+            basicsalary = parseFloat(basicsalary);
+            let hra = basicsalary * 0.05;
+            let ta = basicsalary * 0.08;
+            let ma= basicsalary * 0.07;
+
+            let totalallowance = hra + ta + ma;
+            let grosssalary = basicsalary = totalallowance;
+            document.getElementById('result').innerHTML = `
+                <p>Basic Salary: ₹${basicsalary.toFixed(2)}</p>
+                <p>House Rent Allowance (5%): ₹${hra.toFixed(2)}</p>
+                <p>Travel Allowance (8%): ₹${ta.toFixed(2)}</p>
+                <p>Medical Allowance (7%): ₹${ma.toFixed(2)}</p>
+                <p>Total Allowance: ₹${totalallowance.toFixed(2)}</p>
+                <p>Gross Salary: ₹${grosssalary.toFixed(2)}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

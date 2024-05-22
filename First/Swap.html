@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <p id="ptag"></p>
+    <p id="ptag2"></p>
+<body>
+    <script>
+        let ptag=document.getElementById("ptag")
+        let ptag2=document.getElementById("ptag2")
+        let a = prompt('Enter the A variable: ');
+        let b = prompt('Enter the B variable: ');
+        let temp;
+
+        temp = a;
+        a = b;
+        b = temp;
+        console.log(`The value of a after swapping: ${a}`)
+        console.log(`The value of b after swapping: ${b}`)
+        
+        ptag.innerText = "The value of a after swapping:"+ a;
+        ptag2.innerText = "The value of a after swapping:"+ b;
+    </script>
+</body>
+
+</html>
